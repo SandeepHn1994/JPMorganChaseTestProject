@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f12ac3c8-8693-4a98-b850-7259a2387ea2" name="Changes" comment="&quot; Validation test commit - Adding framework structure &quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDef/newsValidationTestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDef/newsValidationTestSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688674578131</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot; Validation test commit - Adding framework structure &quot;">
+      <created>1688675838990</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688675838990</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
