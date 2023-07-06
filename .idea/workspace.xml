@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f12ac3c8-8693-4a98-b850-7259a2387ea2" name="Changes" comment="&quot; Validation test commit - Adding framework structure &quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDef/newsValidationTestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDef/newsValidationTestSteps.java" afterDir="false" />
-    </list>
+    <list default="true" id="f12ac3c8-8693-4a98-b850-7259a2387ea2" name="Changes" comment="&quot; Updated changes of locators and adding comments for functions  commit  &quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688675838990</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot; Updated changes of locators and adding comments for functions  commit  &quot;">
+      <created>1688677457785</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688677457785</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,6 +185,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot; first commit - Adding framework structure &quot;" />
     <MESSAGE value="&quot; Validation test commit - Adding framework structure &quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot; Validation test commit - Adding framework structure &quot;" />
+    <MESSAGE value="&quot; Updated changes of locators and adding comments for functions  commit  &quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot; Updated changes of locators and adding comments for functions  commit  &quot;" />
   </component>
 </project>
