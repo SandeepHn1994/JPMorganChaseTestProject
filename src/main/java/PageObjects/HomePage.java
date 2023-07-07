@@ -20,6 +20,7 @@ import java.util.List;
 public class HomePage {
     private WebDriver driver;
     private static HomePage homePage;
+    private TestBase testBase;
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -46,8 +47,7 @@ public class HomePage {
 
     public void alert_Accept(WebDriver driver) {
         driver.switchTo().frame(driver.findElement(By.id("sp_message_iframe_801669")));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(alertAcceptButton));
+        testBase.waitElement(driver, alertAcceptButton);
         alertAcceptButton.click();
     }
 
