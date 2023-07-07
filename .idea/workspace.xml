@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f12ac3c8-8693-4a98-b850-7259a2387ea2" name="Changes" comment="&quot; Updated test steps for GoogleSearchpage functions  commit  &quot;">
+    <list default="true" id="f12ac3c8-8693-4a98-b850-7259a2387ea2" name="Changes" comment="&quot; Updated test descriotions for GoogleSearchpage functions  commit  &quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/GoogleSearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/GoogleSearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDef/newsValidationTestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDef/newsValidationTestSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688713088082</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&quot; Updated test descriotions for GoogleSearchpage functions  commit  &quot;">
+      <created>1688713408988</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688713408988</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +212,7 @@
     <MESSAGE value="&quot; Updated changes of locators and adding comments for functions  commit  &quot;" />
     <MESSAGE value="&quot; Updated test steps to remove unnecessary comment and added description for functions  commit  &quot;" />
     <MESSAGE value="&quot; Updated test steps for GoogleSearchpage functions  commit  &quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot; Updated test steps for GoogleSearchpage functions  commit  &quot;" />
+    <MESSAGE value="&quot; Updated test descriotions for GoogleSearchpage functions  commit  &quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot; Updated test descriotions for GoogleSearchpage functions  commit  &quot;" />
   </component>
 </project>

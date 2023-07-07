@@ -48,21 +48,21 @@ public class newsValidationTestSteps {
         driver.get(TestBase.prop.getProperty("googleurl"));
         googleSearchPage = GoogleSearchPage.getInstance(driver);
         googleSearchPage.alert_Accept(driver);
-        boolean searchRes = false;
+        boolean foundNewsArticle = false;
         googleSearchPage.searchSubjectOnGoogle(driver, news);
         List<WebElement> searchResults = googleSearchPage.getNewsSearcResults();
         for (WebElement element : searchResults) {
-            String newsONSearch = element.getText();
+            String newsArticlesFromGoogle = element.getText();
             for (int i = 0; i < news.length(); i++) {
-                for (int j = 0; j < newsONSearch.split(" ").length; j++) {
-                    if (news.contains(newsONSearch.split(" ")[j])) {
+                for (int j = 0; j < newsArticlesFromGoogle.split(" ").length; j++) {
+                    if (news.contains(newsArticlesFromGoogle.split(" ")[j])) {
                         element.click();
-                        searchRes = true;
+                        foundNewsArticle = true;
                         break;
                     }
                 }
             }
-            Assert.assertTrue(searchRes, "News article not found on google source");
+            Assert.assertTrue(foundNewsArticle, "News article not found on google source");
         }
     }
 
