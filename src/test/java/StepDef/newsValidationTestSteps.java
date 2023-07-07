@@ -30,6 +30,8 @@ public class newsValidationTestSteps {
     private GoogleSearchPage googleSearchPage;
     private HomePage homePage;
 
+    private TestBase testBase;
+
     @Given("user launches the browser")
     public void user_launches_the_browser() throws IOException {
         driver = TestBase.setUp();
@@ -48,22 +50,24 @@ public class newsValidationTestSteps {
         driver.get(TestBase.prop.getProperty("googleurl"));
         googleSearchPage = GoogleSearchPage.getInstance(driver);
         googleSearchPage.alert_Accept(driver);
-        boolean foundNewsArticle = false;
         googleSearchPage.searchSubjectOnGoogle(driver, news);
+        boolean foundNewsArticle = false;
         List<WebElement> searchResults = googleSearchPage.getNewsSearcResults();
-        for (WebElement element : searchResults) {
-            String newsArticlesFromGoogle = element.getText();
-            for (int i = 0; i < news.length(); i++) {
-                for (int j = 0; j < newsArticlesFromGoogle.split(" ").length; j++) {
-                    if (news.contains(newsArticlesFromGoogle.split(" ")[j])) {
-                        element.click();
-                        foundNewsArticle = true;
-                        break;
-                    }
+        for (WebElement searchResult : searchResults) {
+            String newsArticleFromGoogle = searchResult.getText();
+            String[] wordsInNews = news.split(" ");
+            for (String word : wordsInNews) {
+                if (newsArticleFromGoogle.contains(word)) {
+                    searchResult.click();
+                    foundNewsArticle = true;
+                    break;
                 }
             }
-            Assert.assertTrue(foundNewsArticle, "News article not found on google source");
+            if (foundNewsArticle) {
+                break;
+            }
         }
+        Assert.assertTrue(foundNewsArticle, "News article not found on google source");
     }
 
     @Then("user on the news validation site")
