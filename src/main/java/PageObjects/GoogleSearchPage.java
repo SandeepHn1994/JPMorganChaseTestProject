@@ -14,7 +14,8 @@ import java.util.List;
 
 /*
  * Author      : hnsandeep94
- * Description : Singleton pageclass to get instance if null whi;e passing driver object
+ * Description : Singleton pageclass to get instance if null while passing driver object,
+ *               Object locators and reusable functions on google searchpages
  * */
 public class GoogleSearchPage {
     private WebDriver driver;
@@ -26,9 +27,11 @@ public class GoogleSearchPage {
         PageFactory.initElements(driver, this);
     }
 
-    private GoogleSearchPage() {
-    }
+    private GoogleSearchPage() {}
 
+    /*
+    * Description : Creates and returns GoogleSearchPage instance if null ,
+    * */
     public static synchronized GoogleSearchPage getInstance(WebDriver driver) {
         if (googleSearchPage == null) {
             googleSearchPage = new GoogleSearchPage(driver);
