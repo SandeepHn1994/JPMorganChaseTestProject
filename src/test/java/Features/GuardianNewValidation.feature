@@ -14,7 +14,7 @@ Feature:  Validation site functionality
     Then  user validate that at least two articles are found
     And   user confirm that the first news article is valid
 
-#   Negative test validation
+#   Negative test validation scenario
 
 #   Scenario: No similar articles found
 #    Given user  lands on the news validation news site

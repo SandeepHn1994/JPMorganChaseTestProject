@@ -20,7 +20,7 @@ import java.util.Properties;
 /*
  * Author : hnsandeep94
  * Updated date : 06-7-2023
- * Description : Factory class to create web driver instance
+ * Description : Factory class to create web driver instance , Add all reusable selenium functions here like waits , actions class, dropdown
  * */
 public class TestBase {
     public static Properties prop;

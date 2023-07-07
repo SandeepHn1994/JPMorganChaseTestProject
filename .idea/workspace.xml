@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f12ac3c8-8693-4a98-b850-7259a2387ea2" name="Changes" comment="&quot; Updated changes of locators and adding comments for functions  commit  &quot;" />
+    <list default="true" id="f12ac3c8-8693-4a98-b850-7259a2387ea2" name="Changes" comment="&quot; Updated changes of locators and adding comments for functions  commit  &quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Features/GuardianNewValidation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Features/GuardianNewValidation.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDef/newsValidationTestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDef/newsValidationTestSteps.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
