@@ -60,6 +60,15 @@ public class GoogleSearchPage {
         acceptCookiesButton.click();
     }
 
+    /*
+    * Author : hnsandeep94
+    * Parameters required : driver , news topic to search in google source
+    * Steps : 1 . Launches the "WWW.GOOGLE.COM" managing alerts
+    *         2.  Change language to english
+    *         3.  Pass the news to be search in search input text
+    *         4.  Submit news for search
+    *         5.  Lands on search result page for further tests
+    * */
     public void searchSubjectOnGoogle(WebDriver driver, String topic) {
         testBase.waitElement(driver, englishLangSelect);
         englishLangSelect.click();
@@ -68,7 +77,6 @@ public class GoogleSearchPage {
         inputSearchButton.sendKeys(topic);
         testBase.waitElement(driver, googleSearchBtton);
         inputSearchButton.submit();
-
     }
 }
 
