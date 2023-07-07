@@ -21,7 +21,11 @@ import java.util.List;
 
 /*
  * Author : hnsandeep94
- * Descriptopm : Scenario to validate the news article on guardian site is not fake while comarin with google/other sorces
+ * Description : Scenario to validate the news article on guardian site is not fake while validating with Google/other source
+ *        TC01 - Validate successful launching guardian site page
+ *        TC02 - Validate  news articles on the page are displayed
+ *        TC03 - Validate the first article news from guardian on Google search results are found
+ *        TC04 - Validate at least 2 or more articles similar to news on guardian is found
  * Parameters : Driver instance , PageClass singleton instances
  * */
 
@@ -32,27 +36,39 @@ public class newsValidationTestSteps {
 
     private TestBase testBase;
 
+    private String news;
+
     @Given("user launches the browser")
     public void user_launches_the_browser() throws IOException {
         driver = TestBase.setUp();
     }
 
-    @When("user navigates to guardian site")
+
+    @Given("user navigate to guardian news site")
     public void user_navigates_to_guardian_site() throws IOException {
         driver.get(TestBase.prop.getProperty("baseurl"));
         homePage = HomePage.getInstance(driver);
         homePage.alert_Accept(driver);
     }
 
-    @Then("user extract the details of the first news article")
+    @When("user extract the details of the first news article")
     public void user_extract_the_details_of_the_first_news_article() {
-        String news = homePage.getLatestnews(driver);
+        news = homePage.getLatestnews(driver);
+    }
+
+    @Then("user search for similar articles on Google")
+    public void user_search_for_similar_articles_on_google() {
         driver.get(TestBase.prop.getProperty("googleurl"));
         googleSearchPage = GoogleSearchPage.getInstance(driver);
         googleSearchPage.alert_Accept(driver);
         googleSearchPage.searchSubjectOnGoogle(driver, news);
+    }
+
+    @Then("user validate that at least two articles are found")
+    public void user_validate_that_at_least_two_articles_are_found() {
         boolean foundNewsArticle = false;
         List<WebElement> searchResults = googleSearchPage.getNewsSearcResults();
+
         for (WebElement searchResult : searchResults) {
             String newsArticleFromGoogle = searchResult.getText();
             String[] wordsInNews = news.split(" ");
@@ -67,30 +83,21 @@ public class newsValidationTestSteps {
                 break;
             }
         }
+        Assert.assertTrue(searchResults.size() >= 2, "At least two articles should be found");
         Assert.assertTrue(foundNewsArticle, "News article not found on google source");
     }
+
 
     @Then("user on the news validation site")
     public void user_on_the_news_validation_site() {
 
     }
 
-    @Then("user search for similar articles on Google")
-    public void user_search_for_similar_articles_on_google() {
-
+    @When("enters the guardian news site website")
+    public void user_enters_guardian_news_site_website() {
+        //driver.get(TestBase.prop.getProperty("baseurl"));
     }
 
-    @Then("user validate that at least two articles are found")
-    public void user_validate_that_at_least_two_articles_are_found() {
-    }
-
-    @Then("user confirm that the first news article is valid")
-    public void user_confirm_that_the_first_news_article_is_valid() {
-    }
-
-    @When("user navigate to {string}")
-    public void user_navigate_to(String string) {
-    }
 
     @After
     public void tearDown() {
