@@ -48,7 +48,7 @@ public class newsValidationTestSteps {
     public void user_navigates_to_guardian_site() throws IOException {
         driver.get(TestBase.prop.getProperty("baseurl"));
         homePage = HomePage.getInstance(driver);
-        homePage.alert_Accept(driver);
+        homePage.checkIfAlertIsPresentandclick(driver);
     }
 
     @When("user extract the details of the first news article")

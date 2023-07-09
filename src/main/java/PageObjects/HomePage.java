@@ -21,11 +21,14 @@ public class HomePage {
     private WebDriver driver;
     private static HomePage homePage;
     private TestBase testBase;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    private HomePage() {}
+
+    private HomePage() {
+    }
 
     public static synchronized HomePage getInstance(WebDriver driver) {
         if (homePage == null) {
@@ -33,6 +36,7 @@ public class HomePage {
         }
         return homePage;
     }
+
     @FindBy(how = How.CSS, using = "[title ='Yes, I’m happy']")
     private static WebElement alertAcceptButton;
 
@@ -41,20 +45,33 @@ public class HomePage {
 
     @FindBy(how = How.XPATH, using = "//*[@class='fc-date-headline']")
     private WebElement todaysDateObj;
-
+    @FindBy(how = How.ID, using = "sp_message_iframe_801669")
+    private WebElement iframeObject;
     @FindBy(how = How.XPATH, using = "//*[@class='fc-item__title']//span[@class='js-headline-text'][1]")
     private WebElement headlIneObject;
 
-    public void alert_Accept(WebDriver driver) {
-        driver.switchTo().frame(driver.findElement(By.id("sp_message_iframe_801669")));
-        testBase.waitElement(driver, alertAcceptButton);
+    /*
+     * Author : hnsandeep94
+     * Description : checking if any iframesavailable and handles alert
+     * */
+
+    public void checkIfAlertIsPresentandclick(WebDriver driver) {
+        int iframeCount = driver.findElements(By.id("sp_message_iframe_801669")).size();
+        boolean isIframeAvailable = iframeCount > 0;
+        if (isIframeAvailable) {
+            switchToIframeAndAcceptAlert(driver);
+        }
+    }
+
+    public void switchToIframeAndAcceptAlert(WebDriver driver) {
+        TestBase.waitForIframe(driver, iframeObject);
         alertAcceptButton.click();
     }
 
     /*
-    * Author : hnsandeep94
-    * Description : function to get latestNews from guardian news page
-    * */
+     * Author : hnsandeep94
+     * Description : function to get latestNews from guardian news page
+     * */
     public String getLatestnews(WebDriver driver) {
         String news = headlIneObject.getText();
         return news;

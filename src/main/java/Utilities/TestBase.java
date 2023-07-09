@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.tracing.opentelemetry.SeleniumSpanExporter;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -62,13 +63,32 @@ public class TestBase {
     public static void waitElement(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+
     }
 
-   /*
-   * Author : hnsandeep94
-   * Parameters required : driver and webelement
-   * Descriptions : Function to perform move to element
-   * */
+    public static void waitForIframe(WebDriver driver, WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
+
+    }
+
+    public void clickIfElementPresent(WebDriver driver, WebElement element) {
+        if (isElementPresent(driver, element)) {
+            waitElement(driver, element);
+            element.click();
+        }
+    }
+
+    public boolean isElementPresent(WebDriver driver, WebElement element) {
+        return element.isDisplayed();
+    }
+
+    /*
+     * Author : hnsandeep94
+     * Parameters required : driver and webelement
+     * Descriptions : Function to perform move to element
+     * */
     public void moveToElement(WebDriver driver, WebElement element) {
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
